@@ -1,5 +1,5 @@
-upstream elasticsearch {
-  server <ES_HOST>:<ES_PORT>;
+upstream mongo {
+  server <MONGO_HOST>:<MONGO_PORT>;
 }
 
 upstream backend {

@@ -1,4 +1,4 @@
-import elasticsearch from '../connectors/elasticsearch'
+import { connect } from '../connectors/mongo'
 import {
   encryptJson,
   decryptXOR,

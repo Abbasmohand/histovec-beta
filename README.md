@@ -26,7 +26,7 @@ La version disponible sur le site fonctionne sur la base des composants suivants
 - nginx 1.15+
 - Boostrap 3.4
 - Vue.js 2.6+
-- Elasticsearch 6.7+
+- Mongo 4.4+
 - Docker 18.09+
 
 ## collaborez en mode développeur
@@ -38,7 +38,7 @@ make dev
 Le mode de développement lance les services suivant:
 - un reverse-proxy nginx (histovec-nginx-dev)
 - un serveur node de développement pour le frontend (avec hot reload) (histovec-frontend-dev)
-- le serveur de données elasticsearch (histovec-elasticsearch)
+- le serveur de données mongo (histovec-mongo)
 - un serveur node de développement pour le backend (histovec-backend)
 - un seveur de cache Redis inmemory pour limiter les requêtes à l'API UTAC (histovec-cache)
 - un serveur Node.js de bouchon pour l'API UTAC (otc-fake)
@@ -68,7 +68,7 @@ pour vérifier le bon chargement des données:
 make index-status
 ```
 
-doit fournir les statistiques Elasticsearch, avec environ 3000 données chargées dans l'index `siv`
+doit fournir les statistiques Mongo, avec environ 3000 données chargées dans la collection `vehicles`
 
 ### chargement de données chiffrées depuis le répertoire local
 Si vous disposez d'un jeu de données chiffrées produites par le Ministère pour faire des tests avec HistoVec, celles-ci doivent être placées dans le repertoire `data/encrypted`.
@@ -93,7 +93,7 @@ make index-direct-update
 
 ### autres opérations relatives aux données
 
-Pour effacer les données dans Elasticsearch.
+Pour effacer les données dans mongo.
 
 ```
 make index-purge
@@ -142,7 +142,7 @@ make up
 Il lance actuellement la v1 d'HistoVec :
 - temporairement, un serveur node qui compile l'application
 - nginx (avec le code compilé)
-- elasticsearch
+- mongo
 
 Les deux phases `build` et `up` permettent de construire les différents éléments (fichiers et répertoires) et structures nécessaires au fonctionnement d'HistoVec.
 
@@ -165,9 +165,9 @@ La performance actuellement évaluée (8 vCPU, 8Go de Ram)
 
 ## autres opérations relatives aux conteneurs
 
-Redémarrer Elasticsearch seul :
+Redémarrer Mongo seul :
 ```
-make elasticsearc-stop elasticsearch
+make mongo-stop mongo
 ```
 
 Redémarrer nginx ou le frontend (en mode dev):

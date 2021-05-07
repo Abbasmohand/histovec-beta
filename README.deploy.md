@@ -1,6 +1,6 @@
 # Construction des elements d'histovec:
 ```
- # construction des images nginx+frontend et elasticsearch
+ # construction des images nginx+frontend et mongo
  make build-all-images
  # sauvegarde des image en format tar
  make save-images
@@ -14,14 +14,14 @@
 # elements en entrée:
   - DC_BUILD_FRONTEND = docker-compose-build-deploy-frontend.yml
   - DC_RUN_NGINX_FRONTEND = docker-compose-run-nginx-frontend.yml
-  - DC_ELASTICSEARCH = docker-compose-elasticsearch.yml
+  - DC_MONGO = docker-compose-mongo.yml
 
 # elements en sortie sont:
   - fichier VERSION (APP_VERSION): histovec-VERSION
   - archive du depot git: histovec-${APP_VERSION}-archive.tar.gz et latest
   - frontend genere (generation javascript/html): histovec-${APP_VERSION}-frontend-dist.tar.gz et latest
   - image nginx contenant nginx et frontend genere (APP_VERSION et latest): histovec-nginx-${APP_VERSION}-image.tar
-  - image elasticsearch (APP_VERSION et latest): histovec-elasticsearch-${APP_VERSION}image.tar
+  - image mongo (APP_VERSION et latest): histovec-mongo-${APP_VERSION}image.tar
 
 # Les elements sont generes dans le repertoire BUILD_DIR=histovec-build
 ```
@@ -31,8 +31,8 @@
  histovec-${APP_VERSION}-frontend-dist.tar.gz
  histovec-nginx-latest-image.tar
  histovec-nginx-${APP_VERSION}-image.tar
- histovec-elasticsearch-latest-image.tar
- histovec-elasticsearch-${APP_VERSION}image.tar
+ histovec-mongo-latest-image.tar
+ histovec-mongo-${APP_VERSION}image.tar
 
 ```
 

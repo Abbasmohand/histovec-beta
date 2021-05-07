@@ -12,13 +12,20 @@ const config = {
   redisUrl: `redis://${process.env.REDIS_URL}`,
   redisPersit: parseInt(process.env.REDIS_PERSIST, 10) || 86400, // 24h
   redisPassword: process.env.REDIS_PASSWORD,
-  esUrl: process.env.ES_URL,
-  esSIVIndex: process.env.ES_INDEX,
+  mongoUrl: process.env.MONGO_URL,
+  mongoSIVIndex: process.env.MONGO_INDEX,
   smtpServer: process.env.SMTP_SERVER,
   smtpPort: process.env.SMTP_PORT,
   mailFrom: process.env.MAIL_FROM,
   mailTo: process.env.MAIL_TO,
   apiPrefix: `/${process.env.APP}/api/v1`,
+
+  // Mongo database
+  mongo: {
+    dbName: process.env.MONGO_DB_NAME,
+    dbUser: process.env.MONGO_DB_USER,
+    dbPass: process.env.MONGO_DB_PASS,
+  },
 
   // UTAC api
   utac: {

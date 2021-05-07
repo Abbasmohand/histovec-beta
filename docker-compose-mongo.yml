@@ -1,0 +1,19 @@
+version: '2'
+
+networks:
+  default:
+    external:
+      name: ${APP}
+
+services:
+  mongo:
+    container_name: ${APP}-mongo
+    image: mongo:4.4-bionic
+    volumes:
+      - ${MONGO_DATA}:/data/db
+      - ${MONGO}:/docker-entrypoint-initdb.d/
+    ports:
+      - "27017:27017"
+    environment:
+      - APP_MONGO_HOST=127.0.0.1 # {MONGO_HOST}
+      - MONGO_PORT=27017

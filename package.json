@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@researchgate/mongoose-avro-schema-generator": "^1.1.6"
+  }
+}

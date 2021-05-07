@@ -1,0 +1,552 @@
+
+{
+"name": "MyClass",
+"type": "record",
+"namespace": "fr.minint.histovec",
+"fields": [
+  {
+    "name": "_id",
+    "type": "string"
+  },
+  {
+  "name": "chunck",
+  "type": "string",
+  "default": "",
+  "doc": "Nom du fichier (sur le swift) auquel ce fichier appartient. Voué à disparaitre en meme temps que swift"
+  }, {
+        "name": "date_update",
+        "type": "string",
+        "default": ""
+      },{
+        "name": "plaq_immat",
+        "type": "string",
+        "default": ""
+      },    {
+        "name": "date_emission_CI",
+        "type": "int",
+        "default": 0,
+        "function": "str_to_timestamp"
+      },{
+    "name": "marque",
+    "type": "string",
+    "default": ""
+  },{
+        "name": "tvv",
+        "type": "string",
+        "default": ""
+      },{
+        "name": "nom_commercial",
+        "type": "string",
+        "default": ""
+      },{
+        "name": "num_cnit",
+        "type": "string",
+        "default": ""
+      },{
+    "name": "couleur",
+    "type": "string",
+    "default": ""
+  },  {
+        "name": "type_reception",
+        "type": "string",
+        "default": ""
+      },{
+    "name": "pt_tech_adm_f1",
+    "type": "int",
+    "default": 0
+  },{
+    "name": "ptac_f2",
+    "type": "int",
+    "default": 0
+  }, {
+        "name": "ptav_g1",
+        "type": "int",
+        "default": 0
+      },{
+        "name": "pt_service_g",
+        "type": "int",
+        "default": 0
+      },{
+        "name": "ptra_f3",
+        "type": "int",
+        "default": 0
+      }, {
+        "name": "CTEC_RLIB_CATEGORIE",
+        "type": "string",
+        "default": ""
+      },
+      {
+        "name": "CTEC_RLIB_GENRE",
+        "type": "string",
+        "default": ""
+      },
+      {
+        "name": "CTEC_RLIB_CARROSSERIE_NAT",
+        "type": "string",
+        "default": ""
+      },
+      {
+        "name": "CTEC_RLIB_CARROSSERIE_CE",
+        "type": "string",
+        "default": ""
+      },
+      {
+        "name": "cveh_num_reception",
+        "type": "string",
+        "default": ""
+      },
+      {
+        "name": "CTEC_CYLINDREE",
+        "type": "float",
+        "default": 0
+      },
+      {
+        "name": "CTEC_PUISSANCE_NETTE",
+        "type": "float",
+        "default": 0
+      },
+      {
+        "name": "CTEC_RLIB_ENERGIE",
+        "type": "string",
+        "default": ""
+      },
+      {
+        "name": "CTEC_PUISS_CV",
+        "type": "int",
+        "default": 0
+      },
+      {
+        "name": "CTEC_PLACES_ASSISES",
+        "type": "int",
+        "default": 0
+      },
+      {
+        "name": "CTEC_NIVEAU_SONORE",
+        "type": "int",
+        "default": 0
+      },
+      {
+        "name": "CTEC_VITESSE_MOTEUR",
+        "type": "int",
+        "default": 0
+      },
+      {
+        "name": "CTEC_RAPPORT_PUIS_MASSE",
+        "type": "float",
+        "default": 0
+      },
+      {
+        "name": "CTEC_PLACES_DEBOUT",
+        "type": "int",
+        "default": 0
+      },
+      {
+        "name": "CTEC_CO2",
+        "type": "int",
+        "default": 0
+      },
+      {
+        "name": "CTEC_RLIB_POLLUTION",
+        "type": "string",
+        "default": ""
+      }, {
+        "name": "pers_nom_naissance_tit",
+        "type": "string",
+        "default": ""
+      },
+      {
+        "name": "pers_prenom_tit",
+        "type": "string",
+        "default": ""
+      },
+      {
+        "name": "adr_code_postal_tit",
+        "type": "string",
+        "default": ""
+      },
+      {
+        "name": "pers_raison_soc_tit",
+        "type": "string",
+        "default": ""
+      },
+      {
+        "name": "pers_siren_tit",
+        "type": "string",
+        "default": ""
+      }, {
+        "name": "date_premiere_immat",
+        "type": "string",
+        "default": ""
+      },
+      {
+        "name": "usage",
+        "type": {
+          "type": "array",
+          "items": "string"
+        },
+        "default": []
+      },
+      {
+        "name": "date_premiere_immat_siv",
+        "type": "string",
+        "default": ""
+      },
+      {
+        "name": "dos_date_derniere_modif",
+        "type": "string",
+        "default": ""
+      },
+      {
+        "name": "dos_date_conversion_siv",
+        "type": "string",
+        "default": ""
+      },
+      {
+        "name": "pers_locataire",
+        "type": "string",
+        "default": ""
+      },
+      {
+        "name": "perte_ci",
+        "type": "string",
+        "default": ""
+      },
+      {
+        "name": "duplicata",
+        "type": "string",
+        "default": ""
+      },
+      {
+        "name": "ci_vole",
+        "type": "string",
+        "default": ""
+      },
+      {
+        "name": "vehicule_vole",
+        "type": "string",
+        "default": ""
+      },
+      {
+        "name": "import",
+        "type": "string",
+        "default": ""
+      },
+      {
+        "name": "vin",
+        "type": "string",
+        "default": ""
+      },
+      {
+        "name": "annulation_ci",
+        "type": "boolean",
+        "default": false,
+        "function": "oui_non_to_boolean"
+      },
+      {
+        "name": "date_annulation_ci",
+        "type": "string",
+        "default": ""
+      },
+      {
+        "name": "imp_imp_pays",
+        "type": "string",
+        "default": ""
+      },
+      {
+        "name": "imp_imp_immat",
+        "type": "string",
+        "default": ""
+      },
+      {
+        "name": "pays_import",
+        "type": "string",
+        "default": ""
+      },{
+        "name": "sit_adm",
+        "type": [
+          "null",
+          {
+            "name": "sit_adm",
+            "type": "record",
+            "fields": [
+              {
+                "name": "suspensions",
+                "type": {
+                  "type": "array",
+                  "items": {
+                    "name": "suspensions_record",
+                    "type": "record",
+                    "fields": [
+                      {
+                        "name": "date",
+                        "type": "string"
+                      },
+                      {
+                        "name": "motif",
+                        "type": "string"
+                      },
+                      {
+                        "name": "remise_titre",
+                        "type": "string"
+                      },
+                      {
+                        "name": "retrait_titre",
+                        "type": "string"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "name": "dvs",
+                "type": [
+                  "null",
+                  {
+                    "type": "array",
+                    "items": {
+                      "name": "dvs_record",
+                      "type": "record",
+                      "fields": [
+                        {
+                          "name": "date",
+                          "type": "string"
+                        },
+                        {
+                          "name": "dvs_autorite",
+                          "type": "string"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "gages",
+                "type": [
+                  "null",
+                  {
+                    "type": "array",
+                    "items": {
+                      "name": "gages_record",
+                      "type": "record",
+                      "fields": [
+                        {
+                          "name": "date",
+                          "type": "string"
+                        },
+                        {
+                          "name": "nom_creancier",
+                          "type": "string"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "opposition",
+                "type": {
+                  "name": "opposition",
+                  "type": "record",
+                  "fields": [
+                    {
+                      "name": "oves",
+                      "type": {
+                        "type": "array",
+                        "items": {
+                          "name": "oves_record",
+                          "type": "record",
+                          "fields": [
+                            {
+                              "name": "date",
+                              "type": "string"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "name": "oveis",
+                      "type": {
+                        "type": "array",
+                        "items": {
+                          "name": "oveis_record",
+                          "type": "record",
+                          "fields": [
+                            {
+                              "name": "date",
+                              "type": "string"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "name": "otcis",
+                      "type": {
+                        "type": "array",
+                        "items": {
+                          "name": "otcis_record",
+                          "type": "record",
+                          "fields": [
+                            {
+                              "name": "date",
+                              "type": "string"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "name": "otcis_pv",
+                      "type": {
+                        "type": "array",
+                        "items": {
+                          "name": "otcis_pv_record",
+                          "type": "record",
+                          "fields": [
+                            {
+                              "name": "date",
+                              "type": "string"
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },{
+    "name": "historique",
+    "type": [
+      "null",
+      {
+        "type": "array",
+        "items": {
+          "name": "historique_record",
+          "type": "record",
+          "fields": [
+            {
+              "name": "opa_date",
+              "type": "string"
+            },
+            {
+              "name": "opa_type",
+              "type": "string"
+            },
+            {
+              "name": "ope_date_annul",
+              "type": ["null","string"]
+            },
+            {
+              "name": "id_pve",
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },{
+    "name": "pve",
+    "type": [
+      "null",
+      {
+        "type": "array",
+        "items": {
+          "name": "pve_record",
+          "type": "record",
+          "fields": [
+            {
+              "name": "id_pve",
+              "type": "string"
+            },
+            {
+              "name": "en_cours",
+              "type": "string"
+            },
+            {
+              "name": "decl",
+              "type": {
+                "name": "decl",
+                "type": "record",
+                "fields": [
+                  {
+                    "name": "date",
+                    "type": "string"
+                  },
+                  {
+                    "name": "num_agree",
+                    "type": "string"
+                  },
+                  {
+                    "name": "dangereux",
+                    "type": "string"
+                  },
+                  {
+                    "name": "tech_reparable",
+                    "type": "string"
+                  }
+                ]
+              }
+            },
+            {
+              "name": "prem",
+              "type": [
+                "null",
+                {
+                  "name": "prem",
+                  "type": "record",
+                  "fields": [
+                    {
+                      "name": "date",
+                      "type": "string"
+                    },
+                    {
+                      "name": "num_agree",
+                      "type": "string"
+                    },
+                    {
+                      "name": "dangereux",
+                      "type": "string"
+                    },
+                    {
+                      "name": "tech_reparable",
+                      "type": "string"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "deux",
+              "type": [
+                "null",
+                {
+                  "name": "deux",
+                  "type": "record",
+                  "fields": [
+                    {
+                      "name": "date",
+                      "type": "string"
+                    },
+                    {
+                      "name": "num_agree",
+                      "type": "string"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+  ]
+}
